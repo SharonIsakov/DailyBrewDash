@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת 1 - סוגי קפה עם חלב</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #F5E9D4, #E8D5B9);
+            color: #4A3728;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 245, 224, 0.7);
+            width: 100%;
+        }
+        h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #6B4E31;
+        }
+        .section {
+            max-width: 1000px;
+            margin: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .chart-container {
+            width: 100%;
+            height: 600px; /* מותאם לגודל הדאשבורד */
+            background: rgba(255, 245, 224, 0.5);
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .back-button {
+            background: linear-gradient(45deg, #A67B5B, #E8D5B9);
+            color: #4A3728;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform 0.3s;
+        }
+        .back-button:hover {
+            transform: scale(1.05);
+        }
+        tableau-viz {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>מערכת 1 - סוגי קפה עם חלב הכי פופולריים בקרב הצרכנים</h1>
+        <button class="back-button" onclick="window.location.href='index.html'">חזרה לדף הראשי</button>
+    </header>
+    <main>
+        <div class="section">
+            <h2>תובנות עיקריות</h2>
+            <p>גרף זה מציג את סוגי הקפה עם חלב המועדפים על ידי הצרכנים, לפי מספר הצרכנים שבחרו בכל סוג משקה</p>
+            <div class="chart-container">
+                <!-- Embedding Tableau Public Dashboard using Embedding API v3 -->
+                <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+                <tableau-viz id="tableauViz"
+                              src="https://public.tableau.com/views/1_17455712279720/Sheet1"
+                              toolbar="bottom"
+                              hide-tabs>
+                </tableau-viz>
+            </div>
+        </div>
+</body>
+</html>
